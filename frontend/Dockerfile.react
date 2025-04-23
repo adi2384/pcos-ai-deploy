@@ -1,14 +1,29 @@
-# Dockerfile.react
+# Step 1: Build React App
 FROM node:18 as build
 
 WORKDIR /app
+
+# Copy package.json and package-lock.json for dependencies
 COPY package*.json ./
 RUN npm install
-COPY . .
+
+# Copy the rest of your app's source code
+COPY . ./
+
+# Build the React app (this generates the production files)
 RUN npm run build
 
-# Serve with NGINX
+# Step 2: Serve with Nginx
 FROM nginx:alpine
+
+# Install Nginx if not present (this ensures Nginx is available)
+RUN apk update && apk add --no-cache nginx
+
+# Copy the built React app files to Nginx's default serving folder
 COPY --from=build /app/build /usr/share/nginx/html
+
+# Expose port 80 to access the React app
 EXPOSE 80
+
+# Command to keep Nginx running in the container
 CMD ["nginx", "-g", "daemon off;"]
