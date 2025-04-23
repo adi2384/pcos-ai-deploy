@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-hormoniq {
+  background-image: url("./assets/hormoniq-bg.png");
+  background-size:  80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffe6e6; /* Light pink to match the theme */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+    font-family: 'Playfair Display', serif;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
+
+  
