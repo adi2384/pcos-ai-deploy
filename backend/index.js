@@ -7,7 +7,7 @@ import authRoutes from "./routes/auth.js"; // Auth routes
 import predictRoute from "./routes/predict.js"; // PCOS prediction
 import dashboardRoutes from "./routes/dashboard.js"; // ✅ Fixed import
 import blogRoutes from "./routes/Blog.js";
-import newsRoutes from "./routes/News.js";
+import newsRoutes from "./routes/news.js";
 import predictionRoutes from "./routes/savePrediction.js";
 import appointmentRoutes from "./routes/appointments.js";
 import doctorRoutes from "./routes/doctor.js";
